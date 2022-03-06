@@ -6,7 +6,7 @@ metadata:
   labels:
     name: hpadeployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       name: hpapod
@@ -41,7 +41,7 @@ spec:
       targetPort: 80
   selector:
     name: hpapod
-  type: ClusterIP
+  type: NodePort
 ---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
